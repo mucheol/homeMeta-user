@@ -252,7 +252,6 @@ td:nth-child(5) .delBtn {
   height: 400px;
   padding: 40px;
   background-color: #fff;
-  border: 1px solid rgba(255, 0, 0, 0.355);
 }
 .popup-inner form > p {
   width: 100%;
@@ -292,6 +291,7 @@ td:nth-child(5) .delBtn {
 .btnBox input {
   background-color: #dd1920;
   padding: 0px;
+  cursor: pointer;
 }
 .btnBox button {
   background-color: #a0a0a0;

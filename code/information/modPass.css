@@ -188,7 +188,8 @@ header .header-inner .main-menu .sub-menu ul li:nth-child(1){
   margin-top: 50px;
   font-size: 18px;
   color: #fff;
-  background-color: #d3d3d3;
+  /* background-color: #d3d3d3; */
+  background-color: #dd1920;
   border: none;
   cursor: pointer;
 }
