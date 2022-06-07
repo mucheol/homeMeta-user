@@ -23,40 +23,40 @@
         <div class="formBox">
           <div class="id_form common_form">
             <p class="formTitle">아이디<span style="color: red">*</span></p>
-            <input type="text" name="" placeholder="영문, 숫자 조합한 6~20자리">
+            <input type="text" name="" placeholder="영문, 숫자 조합한 6~20자리" class="chkId">
             <button>중복확인</button>
           </div>
           <div class="common_form">
             <p class="formTitle">비밀번호<span style="color: red">*</span></p>
-            <input type="password" name="">
+            <input type="password" name="" class="chkPwd">
           </div>
           <div class="common_form">
             <p class="formTitle">비밀번호 확인<span style="color: red">*</span></p>
-            <input type="password" name="">
+            <input type="password" name="" class="chkPwd2">
           </div>
           <div class="common_form">
             <p class="formTitle">사용자 이름<span style="color: red">*</span></p>
-            <input type="text" name="">
+            <input type="text" name="" class="chkName">
           </div>
           <div class="common_form">
             <p class="formTitle">인증 휴대폰 번호<span style="color: red">*</span></p>
-            <input type="text" name="" placeholder="-없이 숫자만 입력">
+            <input type="text" name="" placeholder="-없이 숫자만 입력" class="chkNum">
           </div>
           <div class="common_form">
             <p class="formTitle">이메일<span style="color: red">*</span></p>
-            <input type="text" name="">
+            <input type="text" name="" class="chkEmail">
           </div>
           <div class="common_form">
             <p class="formTitle">IP 주소<span style="color: red">*</span></p>
-            <input type="text" name="">
+            <input type="text" name="" class="chkAddress">
           </div>
           <div class="common_form">
             <p class="formTitle">사업자등록번호<span style="color: red">*</span></p>
-            <input type="text" name="" placeholder="-없이 숫자만 입력">
+            <input type="text" name="" placeholder="-없이 숫자만 입력" class="chkBusiness">
           </div>
           <div class="common_form">
             <p class="formTitle">법인(단체) 명 / 상호<span style="color: red">*</span></p>
-            <input type="text" name="">
+            <input type="text" name="" class="chkTitle">
           </div>
           <div class="pickUp_form common_form">
             <p class="formTitle">집하 주소</p>
@@ -70,14 +70,39 @@
           </div>
           <div class="common_form">
             <p class="formTitle">전화번호<span style="color: red">*</span></p>
-            <input type="text" name="" placeholder="운송장에 들어가는 번호">
+            <input type="text" name="" placeholder="운송장에 들어가는 번호"  class="chkPhone">
           </div>
           
-          <input type="submit" value="가입요청" id="submitBtn">
+          <input type="submit" value="가입요청" id="submitBtn" disabled>
           <a href="/login.html" class="backPage">돌아가기</a>
         </div>
       </form>
     </div>
   </div>
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+        $('.common_form input').on('input', function () {
+            if ($('.chkId').val() != '' 
+              && $('.chkPwd').val() != ''
+              && $('.chkPwd2').val() != ''
+              && $('.chkName').val() != ''
+              && $('.chkNum').val() != ''
+              && $('.chkEmail').val() != ''
+              && $('.chkAddress').val() != ''
+              && $('.chkBusiness').val() != ''
+              && $('.chkTitle').val() != ''
+              && $('.chkPhone').val() != ''
+              ) {
+                $('#submitBtn').prop('disabled', false);
+                $('#submitBtn').addClass('on');
+              }
+              else {
+                $('#submitBtn').prop('disabled', true);
+                $('#submitBtn').removeClass('on');
+            }
+        });
+    });
+  </script>
 </body>
 </html>

@@ -95,6 +95,9 @@
   border: none;
   cursor: pointer;
 }
+#submitBtn.on {
+  background-color: #dd1920;
+}
 .addFunc {
   display: flex;
   flex-direction: row;
