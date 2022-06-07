@@ -289,7 +289,7 @@ td:nth-child(5) .delBtn {
   border: none;
 }
 .btnBox input {
-  background-color: #dd1920;
+  background-color: #dd1920; 
   padding: 0px;
   cursor: pointer;
 }

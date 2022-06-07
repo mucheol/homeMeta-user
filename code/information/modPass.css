@@ -182,7 +182,7 @@ header .header-inner .main-menu .sub-menu ul li:nth-child(1){
 .pwd_form input:nth-child(3):focus {
   border: 1px solid rgba(0, 0, 0, 0.742);
 }
-#submitBtn {
+#submitBtn { 
   width: 430px;
   height: 60px;
   margin-top: 50px;
