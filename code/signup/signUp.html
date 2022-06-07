@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/image/homenumber_logo3.png">
+  <title>홈넘버메타 사용자 페이지</title>
+  <link rel="stylesheet" type="text/css" href="/reset.css">
+  <link rel="stylesheet" type="text/css" href="signUp.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" />
+</head>
+<body>
+  <div class="user_signUpContainer">
+    <div class="inner">
+      <div class="logoBox">
+        <img src="/image/homenumber_logo2.png" class="logo" alt="HOME NUMBER logo">
+      </div>
+      <p class="title">회원가입 요청</p>
+      <p class="announcement"><span style="color: red">*</span>은 필수 입력 사항입니다.</p>
+      <span class="line"></span>
+      <form name="" action="/login.html" method="" autocomplete="on">
+        <div class="formBox">
+          <div class="id_form common_form">
+            <p class="formTitle">아이디<span style="color: red">*</span></p>
+            <input type="text" name="" placeholder="영문, 숫자 조합한 6~20자리">
+            <button>중복확인</button>
+          </div>
+          <div class="common_form">
+            <p class="formTitle">비밀번호<span style="color: red">*</span></p>
+            <input type="password" name="">
+          </div>
+          <div class="common_form">
+            <p class="formTitle">비밀번호 확인<span style="color: red">*</span></p>
+            <input type="password" name="">
+          </div>
+          <div class="common_form">
+            <p class="formTitle">사용자 이름<span style="color: red">*</span></p>
+            <input type="text" name="">
+          </div>
+          <div class="common_form">
+            <p class="formTitle">인증 휴대폰 번호<span style="color: red">*</span></p>
+            <input type="text" name="" placeholder="-없이 숫자만 입력">
+          </div>
+          <div class="common_form">
+            <p class="formTitle">이메일<span style="color: red">*</span></p>
+            <input type="text" name="">
+          </div>
+          <div class="common_form">
+            <p class="formTitle">IP 주소<span style="color: red">*</span></p>
+            <input type="text" name="">
+          </div>
+          <div class="common_form">
+            <p class="formTitle">사업자등록번호<span style="color: red">*</span></p>
+            <input type="text" name="" placeholder="-없이 숫자만 입력">
+          </div>
+          <div class="common_form">
+            <p class="formTitle">법인(단체) 명 / 상호<span style="color: red">*</span></p>
+            <input type="text" name="">
+          </div>
+          <div class="pickUp_form common_form">
+            <p class="formTitle">집하 주소</p>
+            <div class="postalCode">
+              <input type="text" name="" placeholder="우편번호">
+              <button>우편번호 검색</button>
+            </div>
+            <input type="text" name="" placeholder="주소">
+            <input type="text" name="" placeholder="상세주소">
+            <input type="text" name="" placeholder="참고항목">
+          </div>
+          <div class="common_form">
+            <p class="formTitle">전화번호<span style="color: red">*</span></p>
+            <input type="text" name="" placeholder="운송장에 들어가는 번호">
+          </div>
+          
+          <input type="submit" value="가입요청" id="submitBtn">
+          <a href="/login.html" class="backPage">돌아가기</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

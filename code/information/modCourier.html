@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/image/homenumber_logo3.png">
+  <title>홈넘버메타 사용자 페이지</title>
+  <link rel="stylesheet" type="text/css" href="/reset.css">
+  <link rel="stylesheet" type="text/css" href="modCourier.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="/image/homenumber_logo.png" alt="HOME NUMBER logo">
+    </div>
+    <div class="header-inner">
+      <nav>
+        <ul class="main-menu">
+          <li><a href="/code/deliveryReceipt/deliveryReceipt.html">홈</a></li>
+          <li><a href="/code/information/modInfo.html">정보관리</a></li>
+          <li><a href="/code/deliveryReceipt/deliveryReceipt.html">택배 접수</a></li>
+          <li><a href="/code/cooperativeManagement/coopertiveManagement.html">협력사 관리</a></li>
+          <li><a href="/login.html">로그아웃</a></li>
+          <div class="sub-menu">
+            <ul></ul>
+            <ul>
+              <li><a href="/code/information/modInfo.html">기본정보 수정</a></li>
+              <li><a href="/code/information/modPass.html">비밀번호 변경</a></li>
+              <li><a href="/code/information/modMall.html">쇼핑몰 등록관리</a></li>
+              <li><a href="/code/information/modCourier.html">택배사정보 수정</a></li>
+            </ul>
+            <ul>
+              <li><a href="/code/deliveryReceipt/deliveryReceipt.html">택배 접수</a></li>
+              <li><a href="/code/deliveryReceipt/receptionHistory.html">택배접수 이력</a></li>
+            </ul>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="modMallContainer">
+    <div class="inner">
+      <div class="textBox">
+        <p class="title">정보관리</p>
+        <p>택배사 정보수정</p>
+      </div>
+      <div class="rightBtnBox">
+        <button class="btn">저장하기</button>
+        <span class="horLine"></span>
+        <button class="btn">취소하기</button>
+      </div>
+      <span class="line"></span>
+      <div class="modBox">
+        <form action="">
+          <div class="mod_bottom">
+            <div class="content01">
+              <p>택배사</p>
+              <select name="courier" id="">
+                <option value="">택배사명</option>
+                <option value="">CJ대한통운</option>
+                <option value="">롯데택배</option>
+                <option value="">한진택배</option>
+                <option value="">로젠택배</option>
+                <option value="">우체국택배</option>
+              </select>
+              <p>택배 계약 정보</p>
+              <div class="apiBox">
+                <div class="api_first apiCol">
+                  <div class="api_left">
+                    <p>계약코드 또는 고객ID</p>
+                  </div>
+                  <div class="api_right">
+                    <input type="text">
+                  </div>
+                </div>
+                <div class="api_second apiCol">
+                  <div class="api_left">
+                    <p>운임구분</p>
+                  </div>
+                  <div class="api_right">
+                    <input type="radio"><p>선불</p>
+                    <input type="radio"><p>착불</p>
+                    <input type="radio"><p>신용</p>
+                  </div>
+                </div>
+                <div class="api_third apiCol">
+                  <div class="api_left">
+                    <p>택배용지</p>
+                  </div>
+                  <div class="api_right">
+                    <input type="radio"><p>CJ_2P</p>
+                    <input type="radio"><p>CJ_NEW_2P</p>
+                  </div>
+                </div>
+                <div class="api_fourth apiCol">
+                  <div class="api_left">
+                    <p></p>
+                  </div>
+                  <div class="api_right">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content02">
+              <button>추가</button>
+              <span class="line"></span>
+              <button>제거</button>
+            </div>
+            <div class="content03">
+              <p>등록택배사 정보</p>
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    (function() {
+      // header
+    $('.main-menu').hover(function(){
+      $('.sub-menu').css({'height' : '170px'})
+    }, function(){
+      $('.sub-menu').css({'height' : '0'})
+    })
+
+    let inputEle = document.getElementById("select_input");
+    const inputTag = document.createElement('input');
+    inputTag.setAttribute('text','text');
+    $('select[name=courier]').change(function(){
+      let select = $('select[name=courier] option:selected').text();
+      if(select == "롯데택배") {
+        $('.api_fourth .api_left p').html('집화점 코드');
+        $('.api_fourth .api_right').append(inputTag);
+      }else {
+        $('.api_fourth .api_left p').html('');
+        $('.api_fourth .api_right input').remove();
+      }
+    })
+    })();
+</script>
+</body>
+</html>

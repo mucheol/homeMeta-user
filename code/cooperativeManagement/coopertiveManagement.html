@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/image/homenumber_logo3.png">
+  <title>홈넘버메타 사용자 페이지</title>
+  <link rel="stylesheet" type="text/css" href="/reset.css">
+  <link rel="stylesheet" type="text/css" href="cooperativeManagement.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="/image/homenumber_logo.png" alt="HOME NUMBER logo">
+    </div>
+    <div class="header-inner">
+      <nav>
+        <ul class="main-menu">
+          <li><a href="/code/deliveryReceipt/deliveryReceipt.html">홈</a></li>
+          <li><a href="/code/information/modInfo.html">정보관리</a></li>
+          <li><a href="/code/deliveryReceipt/deliveryReceipt.html">택배 접수</a></li>
+          <li><a href="/code/cooperativeManagement/coopertiveManagement.html">협력사 관리</a></li>
+          <li><a href="/login.html">로그아웃</a></li>
+          <div class="sub-menu">
+            <ul></ul>
+            <ul>
+              <li><a href="/code/information/modInfo.html">기본정보 수정</a></li>
+              <li><a href="/code/information/modPass.html">비밀번호 변경</a></li>
+              <li><a href="/code/information/modMall.html">쇼핑몰 등록관리</a></li>
+              <li><a href="/code/information/modCourier.html">택배사정보 수정</a></li>
+            </ul>
+            <ul>
+              <li><a href="/code/deliveryReceipt/deliveryReceipt.html">택배 접수</a></li>
+              <li><a href="/code/deliveryReceipt/receptionHistory.html">택배접수 이력</a></li>
+            </ul>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="cooperativeManagementContainer">
+    <div class="inner">
+      <p class="title">내 협력사</p>
+      <form action="">
+        <div class="searchBox">
+          <select name="cooperative_menuSelect" id="" class="select_first">
+            <option value="">사업자등록번호</option>
+            <option value="">회사명</option>
+            <option value="">대표자명</option>
+            <img src="/image/arrow.png" alt="">
+            <span class="arrowIcon"><img src="/image/arrow.png" alt="arrow Icon/"></span>
+          </select>
+          <input type="text" id="select_input" placeholder="사업자등록번호 입력">
+          <input type="submit" value="검색" class="btn">
+          <input type="button" value="등록하기" class="btn2">
+        </div>
+      </form>
+      <div class="cooperativeList">
+        <table>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>사업자등록번호</th>
+              <th>회사명</th>
+              <th>대표자명</th>
+              <th>삭제</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>1234</td>
+                <td>12-537-16584</td>
+                <td>oneGrandMother</td>
+                <td>유포코</td>
+                <td>
+                  <button class="delBtn">삭제</button>
+                </td>
+              </tr>
+            <tr>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+            </tr>
+            <tr>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+            </tr>
+            <tr>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+            </tr>
+            <tr>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+            </tr>
+            <tr>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+              <td>{}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          페이징 처리 부분
+        </div>
+      </div>
+      <!-- 운송장 대역 등록 -->
+      <div class="cooperRegist">
+        <div class="popup">
+          <div class="popup-inner">
+            <form action="">
+              <p>협력사 등록</p>
+              <div class="cooper_con01 cooper_con">
+                <p>사업자등록번호</p>
+                <input type="text">
+              </div>
+              <div class="cooper_con02 cooper_con">
+                <p>회사명</p>
+                <input type="text">
+              </div>
+              <div class="cooper_con03 cooper_con">
+                <p>대표자명</p>
+                <input type="text">
+              </div>
+            </form>
+          </div>
+          <div class="btnBox">
+            <input type="submit" value="등록하기">
+            <button class="cancelRegist">취소하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup_back"></div>
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    (function() {
+      // header
+    $('.main-menu').hover(function(){
+      $('.sub-menu').css({'height' : '170px'})
+    }, function(){
+      $('.sub-menu').css({'height' : '0'})
+    })
+
+    let inputEle = document.getElementById("select_input");
+    console.log(inputEle);
+    $('select[name=cooperative_menuSelect]').change(function(){
+      let select = $('select[name=cooperative_menuSelect] option:selected').text();
+      console.log(select);
+      if(select == "사업자등록번호") {
+        inputEle.placeholder = "사업자등록번호 입력";
+      }else if(select == "회사명") {
+        inputEle.placeholder = "회사명 입력";
+      }else if(select == "대표자명") {
+        inputEle.placeholder = "대표자명 입력";
+      }else {
+        inputEle.placeholder = "";
+      }
+    })
+
+    
+    $('.btn2').on("click", function() {
+      $('.popup_back').css({'display' : 'block'});
+      $('.cooperRegist').css({'display' : 'flex'});
+    })
+
+    // popup 바깥쪽 누르면 팝업창 꺼지게
+    $('.popup_back, .cancelRegist').on("click", function(){
+      $('.popup_back').css({'display' : 'none'});
+      $('.cooperRegist').css({'display' : 'none'});
+    })
+    })();
+  </script>
+</body>
+</html>

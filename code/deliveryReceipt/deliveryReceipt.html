@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/image/homenumber_logo3.png">
+  <title>홈넘버메타 사용자 페이지</title>
+  <link rel="stylesheet" type="text/css" href="/reset.css">
+  <link rel="stylesheet" type="text/css" href="deliveryReceipt.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="/image/homenumber_logo.png" alt="HOME NUMBER logo">
+    </div>
+    <div class="header-inner">
+      <nav>
+        <ul class="main-menu">
+          <li><a href="/code/deliveryReceipt/deliveryReceipt.html">홈</a></li>
+          <li><a href="/code/information/modInfo.html">정보관리</a></li>
+          <li><a href="/code/deliveryReceipt/deliveryReceipt.html">택배 접수</a></li>
+          <li><a href="/code/cooperativeManagement/coopertiveManagement.html">협력사 관리</a></li>
+          <li><a href="/login.html">로그아웃</a></li>
+          <div class="sub-menu">
+            <ul></ul>
+            <ul>
+              <li><a href="/code/information/modInfo.html">기본정보 수정</a></li>
+              <li><a href="/code/information/modPass.html">비밀번호 변경</a></li>
+              <li><a href="/code/information/modMall.html">쇼핑몰 등록관리</a></li>
+              <li><a href="/code/information/modCourier.html">택배사정보 수정</a></li>
+            </ul>
+            <ul>
+              <li><a href="/code/deliveryReceipt/deliveryReceipt.html">택배 접수</a></li>
+              <li><a href="/code/deliveryReceipt/receptionHistory.html">택배접수 이력</a></li>
+            </ul>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="deliveryReceiptContainer">
+    <div class="inner">
+      <p class="title">택배 접수</p>
+      <p class="uploadBtn">운송장 올리기</p>
+      <form action="">
+        <div class="selectBox">
+          <div class="select01">
+            <p class="selectTitle">택배사</p>
+            <select name="" id="">
+              <option value="">택배사명</option>
+              <option value="">CJ대한통운</option>
+              <option value="">롯데택배</option>
+              <img src="/image/arrow.png" alt="">
+              <span class="arrowIcon"><img src="/image/arrow.png" alt="arrow Icon/"></span>
+            </select>
+          </div>
+          <div class="select02">
+            <p class="selectTitle">박스 타입</p>
+            <select name="" id="">
+              <option value="">극소</option>
+              <option value="">소</option>
+              <option value="">중</option>
+              <option value="">대</option>
+              <option value="">특대</option>
+              <img src="/image/arrow.png" alt="">
+              <span class="arrowIcon"><img src="/image/arrow.png" alt="arrow Icon/"></span>
+            </select>
+          </div>
+        </div>
+      </form>
+      <div class="contents">
+        <div class="upload-box">
+          <div id="drop-file" class="drag-file">
+            <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
+            <p class="message">Drag files to upload</p>
+          </div>
+          <label class="file-label" for="chooseFile">Choose File</label>
+          <input class="file" id="chooseFile" type="file" multiple onchange="dropFile.handleFiles(this.files)">
+        </div>
+        <div id="files" class="files">
+          <div class="file">
+            <div class="thumbnail"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    (function() {
+      // header
+    $('.main-menu').hover(function(){
+      $('.sub-menu').css({'height' : '170px'})
+    }, function(){
+      $('.sub-menu').css({'height' : '0'})
+    }
+    )
+    })();
+    
+    function DropFile(dropAreaId, fileListId) {
+  let dropArea = document.getElementById(dropAreaId);
+  let fileList = document.getElementById(fileListId);
+
+  function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  function highlight(e) {
+    preventDefaults(e);
+    dropArea.classList.add("highlight");
+  }
+
+  function unhighlight(e) {
+    preventDefaults(e);
+    dropArea.classList.remove("highlight");
+  }
+
+  function handleDrop(e) {
+    unhighlight(e);
+    let dt = e.dataTransfer;
+    let files = dt.files;
+
+    handleFiles(files);
+
+    const fileList = document.getElementById(fileListId);
+    if (fileList) {
+      fileList.scrollTo({ top: fileList.scrollHeight });
+    }
+  }
+
+  function handleFiles(files) {
+    files = [...files];
+    files.forEach(previewFile);
+  }
+
+  function previewFile(file) {
+    console.log(file);
+    fileList.appendChild(renderFile(file));
+  }
+
+  function renderFile(file) {
+    let fileDOM = document.createElement("div");
+    fileDOM.className = "file";
+    fileDOM.innerHTML = `
+      <div class="thumbnail">
+        <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일타입 이미지" class="image">
+      </div>
+      <div class="details">
+        <div class="detailFile">
+          <span class="name">${file.name}</span>
+          <span class="size" style="margin-left:10px;">${file.size}byte</span>
+        </div>
+        <div class="progress">
+          <div class="bar"></div>
+        </div>
+        <div class="status">
+          <span class="percent">100% done</span>
+          <span class="speed">90KB/sec</span>
+        </div>
+      </div>
+    `;
+    return fileDOM;
+  }
+
+  dropArea.addEventListener("dragenter", highlight, false);
+  dropArea.addEventListener("dragover", highlight, false);
+  dropArea.addEventListener("dragleave", unhighlight, false);
+  dropArea.addEventListener("drop", handleDrop, false);
+
+  return {
+    handleFiles
+  };
+}
+
+const dropFile = new DropFile("drop-file", "files");
+
+</script>
+</body>
+</html>
