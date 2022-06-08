@@ -70,11 +70,12 @@
           </div>
         </div>
       </form>
+      <p class="dragOn">업로드 엑셀파일</p>
       <div class="contents">
         <div class="upload-box">
           <div id="drop-file" class="drag-file">
-            <p class="dragOn">업로드 엑셀파일</p>
-            <input class="file dragOn" id="chooseFile" type="file" multiple onchange="dropFile.handleFiles(this.files)">
+            
+            <input class="file dragOn" id="chooseFile" type="file" onchange="dropFile.handleFiles(this.files)">
             <label class="file-label dragOn" for="chooseFile">파일 선택</label>
             <p class="message dragOn">또는 파일을 여기로 드래그하세요</p>
             <p class="dragOff">파일 올리기</p>
@@ -135,7 +136,7 @@
   }
 
   function handleFiles(files) {
-    files = [...files];
+    files = [files[0]];
     files.forEach(previewFile);
   }
 

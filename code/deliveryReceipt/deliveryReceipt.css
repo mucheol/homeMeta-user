@@ -147,11 +147,15 @@ header .header-inner .main-menu .sub-menu ul li:nth-child(1){
   display: none;
 }
  /* upload */
+ .dragOn{
+  margin-top: 30px;
+  font-size: 18px;
+}
  .contents {
   position: relative;
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 10px;
   background-color: #efefef;
 }
 .contents .upload-box {
@@ -176,9 +180,6 @@ header .header-inner .main-menu .sub-menu ul li:nth-child(1){
 .contents .upload-box .drag-file.highlight {
   background-color: #747474;
 }
-.contents .upload-box .drag-file.highlight .dragOn{
-  display: none;
-}
 .contents .upload-box .drag-file .dragOff{
   display: none;
 }
@@ -195,6 +196,9 @@ header .header-inner .main-menu .sub-menu ul li:nth-child(1){
 }
 .contents .upload-box .drag-file .message {
   margin-bottom: 0;
+}
+.contents .upload-box .drag-file .message.dragOn {
+  margin-top: 0;
 }
 .contents .upload-box .file-label {
   display: flex;
