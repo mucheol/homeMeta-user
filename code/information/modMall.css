@@ -176,15 +176,15 @@ header .header-inner .main-menu .sub-menu ul li:nth-child(1){
 }
 .apiBox {
   background-color: #5454543c;
-  border: 1px solid rgba(0, 0, 0, 0.102);
-}
-.apiBox .api_top input:nth-child(1){
-  border-bottom: none;
+  /* border: 1px solid rgba(0, 0, 0, 0.102); */
 }
 .apiBox .api_top,
 .apiBox .api_bottom {
   display: flex;
-  border: 1px solid rgba(109, 109, 109, 0.167);
+  
+}
+.apiBox .api_bottom {
+  border-top: 1px solid rgba(109, 109, 109, 0.167);
 }
 .apiBox .api_left {
   width: calc(50% + 20px);
@@ -196,8 +196,17 @@ header .header-inner .main-menu .sub-menu ul li:nth-child(1){
   width: 90%;
   height: 100%;
 }
-.apiBox .api_right input {
-  border-top: none;
+.apiBox .api_top .api_right  input {
+  border-bottom: 1px solid rgba(109, 109, 109, 0.027);
+}
+.apiBox .api_top .api_right  input:focus {
+  border-bottom: 1px solid rgb(109, 109, 109);
+}
+.apiBox .api_bottom .api_right  input {
+  border-top: 1px solid rgba(109, 109, 109, 0.027);
+}
+.apiBox .api_bottom .api_right  input:focus {
+  border-top: 1px solid rgb(109, 109, 109);
 }
 .mod_bottom .content02 {
   display: flex;

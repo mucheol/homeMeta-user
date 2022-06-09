@@ -180,6 +180,9 @@ header .header-inner .main-menu .sub-menu ul li:nth-child(1){
 .contents .upload-box .drag-file.highlight {
   background-color: #747474;
 }
+.contents .upload-box .drag-file.highlight .dragOn {
+  display: none;
+}
 .contents .upload-box .drag-file .dragOff{
   display: none;
 }
