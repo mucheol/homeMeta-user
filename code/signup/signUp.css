@@ -127,3 +127,62 @@
 .backPage:active, .backPage:visited{
   color: #fff !important;
 }
+
+@media all and (max-width:768px) {
+  .inner {
+    width: 300px;
+    margin-top: 30px;
+  }
+  .logoBox {
+    width: 120px;
+    height: auto;
+  }
+  .title{
+    font-size: 18px;
+    margin-top: 25px;
+  }
+  .user_signUpContainer .line {
+    width: 100%;
+  }
+  form {
+    width: 300px;
+  }
+  .form input {
+    width: 85px;
+    height: 41px;
+  }
+  .formBox {
+    margin-top: 30px;
+  }
+  .common_form {
+    width: 100%;
+  }
+  .common_form .formTitle {
+    font-size: 14px;
+  }
+  .common_form input {
+    font-size: 14px;
+    height: 41px;
+  }
+  .id_form button {
+    font-size: 14px;
+  }
+  .pickUp_form .postalCode button {
+    height: 41px;
+  }
+  .common_form:nth-child(11) {
+    margin-bottom: 0;
+  }
+  #submitBtn {
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+  }
+  .backPage{
+    width: 100%;
+    height: 50px;
+  }
+  .addFunc {
+    margin-top: 15px;
+  }
+}
