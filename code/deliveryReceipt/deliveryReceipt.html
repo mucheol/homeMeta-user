@@ -39,6 +39,40 @@
         </ul>
       </nav>
     </div>
+    <div class="logoBox">
+      <img src="/image/homenumber_logo2.png" alt="">
+    </div>
+      <!-- hamburger -->
+    <div id="hamburger">
+      <div id="line-wrapper" class="line-wrapper">
+        <div id="line-top" class="line"></div>
+        <div id="line-mid" class="line"></div>
+        <div id="line-bot" class="line"></div>
+      </div>
+    </div>
+    <div class="menu-slide">
+      <div class="text-slide">
+        <div id="line-wrapper2" class="line-wrapper">
+          <div id="line-x1" class="line"></div>
+        </div>
+        <a href="/code/deliveryReceipt/deliveryReceipt.html" class="menu_title">홈</a>
+        <span class="menu_line"></span>
+        <a href="/code/information/modInfo.html" class="menu_title">정보관리</a>
+        <a href="/code/information/modInfo.html">기본정보 수정</a>
+        <a href="/code/information/modPass.html">비밀번호 변경</a>
+        <a href="/code/information/modMall.html">쇼핑몰 등록관리</a>
+        <a href="/code/information/modCourier.html">택배사 정보 수정</a>
+        <span class="menu_line"></span>
+        <a href="/code/deliveryReceipt/deliveryReceipt.html" class="menu_title">택배접수</a>
+        <a href="/code/deliveryReceipt/deliveryReceipt.html">택배접수</a>
+        <a href="/code/deliveryReceipt/receptionHistory.html">택배접수이력</a>
+        <span class="menu_line"></span>
+        <a href="/code/cooperativeManagement/coopertiveManagement.html" class="menu_title">협력사 관리</a>
+        <span class="menu_line"></span>
+        <a href="/login.html" class="menu_title">로그아웃</a>
+      </div>
+      <div class="dontouch"></div>
+    </div>
   </header>
   <div class="deliveryReceiptContainer">
     <div class="inner">
@@ -59,6 +93,7 @@
           <div class="select02">
             <p class="selectTitle">박스 타입</p>
             <select name="" id="">
+              <option value="">박스타입</option>
               <option value="">극소</option>
               <option value="">소</option>
               <option value="">중</option>
@@ -68,15 +103,16 @@
               <span class="arrowIcon"><img src="/image/arrow.png" alt="arrow Icon/"></span>
             </select>
           </div>
+          <button class="uploadBtn2">운송장 올리기</button>
         </div>
       </form>
       <p class="dragOn">업로드 엑셀파일</p>
+      <div class="upload_file">파일이름.txt</div>
       <div class="contents">
         <div class="upload-box">
           <div id="drop-file" class="drag-file">
-            
             <input class="file dragOn" id="chooseFile" type="file" onchange="dropFile.handleFiles(this.files)">
-            <label class="file-label dragOn" for="chooseFile">파일 선택</label>
+            <label class="file-label dragOn" for="chooseFile"><img src="/image/upload.png" alt="upload icon" class="upload_icon"/>파일 선택</label>
             <p class="message dragOn">또는 파일을 여기로 드래그하세요</p>
             <p class="dragOff">파일 올리기</p>
             <img src="/image/plus-icon.png" alt="plus icon" class="plusIcon dragOff">
@@ -93,17 +129,20 @@
   </div>
   <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
   <script>
-    (function() {
+    $(document).ready(function(){
       // header
     $('.main-menu').hover(function(){
       $('.sub-menu').css({'height' : '170px'})
     }, function(){
       $('.sub-menu').css({'height' : '0'})
-    }
-    )
-    })();
+    })
     
-    function DropFile(dropAreaId, fileListId) {
+ // 햄버거
+ $('#line-wrapper, #line-wrapper2, .dontouch').click(function(){
+    $('.menu-slide').toggleClass('active');
+    })
+
+  function DropFile(dropAreaId, fileListId) {
   let dropArea = document.getElementById(dropAreaId);
   let fileList = document.getElementById(fileListId);
 
@@ -167,8 +206,9 @@
     handleFiles
   };
 }
-
+})();
 const dropFile = new DropFile("drop-file", "files");
+
 
 </script>
 </body>
