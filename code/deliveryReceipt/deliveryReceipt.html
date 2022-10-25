@@ -130,6 +130,8 @@
   <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
   <script>
     $(document).ready(function(){
+      $('.loader').delay('3000').fadeOut();
+
       // header
     $('.main-menu').hover(function(){
       $('.sub-menu').css({'height' : '170px'})
@@ -208,7 +210,6 @@
 }
 })();
 const dropFile = new DropFile("drop-file", "files");
-
 
 </script>
 </body>
